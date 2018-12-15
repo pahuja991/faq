@@ -18,6 +18,9 @@ class Register extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                     ->assertSee('Register');
+                    ->type('email','rohitpahuja91@icloud.com')
+
+
         });
     }
 }
