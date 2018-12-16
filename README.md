@@ -13,3 +13,55 @@ to run the faq project
 7. generate database seeds :-
    command
    Run: seeds php artisan migrate:refresh --seed
+   
+   this project can be seen by heroku
+   heroku link :- 
+   https://secret-depths-81126.herokuapp.com/
+   
+   Epic 1 - I have done end to end testing of all the features of this FAQ project through Laravel Dusk.Through Laravel Dusk we can do end to end testing of all the features and can check whether the feature is running according to requirements or not.
+   
+   Here are the installation steps of laravel dusk
+   1. Install the package via composer:
+      command - 
+      "composer require --dev laravel/dusk" 
+      
+   2. Then run artisan command -
+      "php artisan dusk:install"
+      
+   3. Register the Laravel\Dusk\DuskServiceProvider service provider.
+      It is to be done within register method of AppServiceProvider.
+      
+      public function register()
+          {
+              if ($this->app->environment('local', 'testing')) {
+                  $this->app->register(DuskServiceProvider::class);
+              }
+          }
+          
+   4. We generate dusk test by following command :-
+       php artisan dusk:make EditAnswerText
+       
+   5. We run the tests by the following command :-
+      php artisan dusk
+      
+   I have written 12 tests with 43 insertions
+   
+    The 12 tests are :-
+    a. EditAnswerTest
+    b. EditQuestionTest
+    c. ViewAnswerTest
+    d. ViewQuestionTest
+    e. CreateAnswerTest
+    f. CreateQuestionTest
+    g. DeleteAnswerTest
+    h. DeleteQuestionTest
+    i. LoginTest
+    j. Register
+    k. HomePageTest
+    l. ProfileCheckTest
+    
+    ---> Laravel Dusk is open-sourced software under the MIT license
+    
+    These tests are working perfectly fine and i have committed them and uploaded in my git hub repository.
+    I have also attached the 12 screenshots under a word doc file.
+    The name of this word file is "dusk tests"
