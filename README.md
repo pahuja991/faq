@@ -50,7 +50,9 @@ to run the faq project
    
    7 Also,Php Dusk uses phpunit in the backend,the main feature is that it tests the feature on browser level.
       
-   I have written 12 tests with 43 insertions
+   8. I have uploaded the word file containing my test screenshots in Manage embedded files.The name of this word file is "dusk tests"
+   
+   9. I have written 12 tests with 43 insertions
    
     The 12 tests are :-
     a. EditAnswerTest
