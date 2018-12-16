@@ -18,6 +18,8 @@ to run the faq project
    heroku link :- 
    https://secret-depths-81126.herokuapp.com/
    
+   my git hub repository link - https://github.com/pahuja991/faq
+   
    Epic 1 - I have done end to end testing of all the features of this FAQ project through Laravel Dusk.Through Laravel Dusk we can do end to end testing of all the features and can check whether the feature is running according to requirements or not.
    
    Here are the installation steps of laravel dusk
