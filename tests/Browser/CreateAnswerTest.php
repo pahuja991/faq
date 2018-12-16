@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\Browser;
 
 
@@ -15,16 +14,24 @@ class CreateAnswerTest extends DuskTestCase
      *
      * @return void
      */
-    public function testExample()
+    public function test_create_answer()
     {
-        $this->browse(function ($browser) {
-            $user = User::find(1);
-            $question = Question::find(812);
-            $browser->loginAs(User::find(1))
-                ->visit('/questions/answers/create', $question->id)
-                ->type('body', "This is Making another test Via Laravel Dusk")
-                ->press('Save')
-                ->assertPathIs('/questions', $question->id);
+        $user = factory(User::class)->make();
+        $user->save();
+        $this->browse(function ($browser) use ($user) {
+            $browser->visit('http://localhost:8000')
+                ->assertTitle('Laravel')
+                ->clickLink('Login')
+                ->type('email', 'rohitpahuja91@icloud.com')
+                ->type('password', 'hello123')
+                ->press('button[type="submit"]')
+                ->assertSee('Questions')
+                ->clickLink('View')
+                ->assertSee('Question')
+                ->clickLink('Answer Question')
+                ->type('body', 'Hello everyone how are you?')
+                ->press('#submit')
+                ->assertSee('Saved');
         });
     }
 }
