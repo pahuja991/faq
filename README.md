@@ -44,6 +44,10 @@ to run the faq project
    5. We run the tests by the following command :-
       php artisan dusk
       
+   6. We need phpstorm to run this tests and project.I used Phpstorm 2018.2.3 version
+   
+   7 Also,Php Dusk uses phpunit in the backend,the main feature is that it tests the feature on browser level.
+      
    I have written 12 tests with 43 insertions
    
     The 12 tests are :-
