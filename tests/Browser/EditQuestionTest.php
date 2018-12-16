@@ -1,20 +1,20 @@
 <?php
-namespace Tests\Browser;
 
+namespace Tests\Browser;
 
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use App\User;
 
-class CreateAnswerTest extends DuskTestCase
+class EditQuestionTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function test_create_answer()
+    public function test_edit_question()
     {
         $user = factory(User::class)->make();
         $user->save();
@@ -28,10 +28,14 @@ class CreateAnswerTest extends DuskTestCase
                 ->assertSee('Questions')
                 ->clickLink('View')
                 ->assertSee('Question')
-                ->clickLink('Answer Question')
-                ->type('body', 'Hello everyone how are you?')
-                ->press('#submit')
-                ->assertSee('Saved');
+                ->clickLink('Edit Question')
+                ->assertSee('Body')
+                ->type('body', 'have you seen budapest?')
+                ->click('#submit')
+                ->assertSee('Saved')
+                ->press('#navbarDropdown')
+                ->clickLink('Logout')
+                ->assertTitle('Laravel');
         });
     }
 }
